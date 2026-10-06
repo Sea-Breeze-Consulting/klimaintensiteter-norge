@@ -1,6 +1,6 @@
 # Klimaintensiteter Norge
 
-En åpen, søkbar faktoroversikt for norske virksomheter, publisert av Sea Breeze Electrical Consulting AS. Nettstedet kobler DFØs utslippsfaktorer til norsk standard kontoplan.
+En åpen, søkbar faktoroversikt for norske virksomheter, publisert av Sea Breeze Electrical Consulting AS. Faktorene er basert på DFØs datasett, inflasjonsjustert, koblet til 2026-kontoplanen og utvidet av Sea Breeze Consulting.
 
 ## Publisering
 
