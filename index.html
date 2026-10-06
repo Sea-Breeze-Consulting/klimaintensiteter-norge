@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Søkbare klimaintensiteter for norske virksomheter, basert på DFØs utslippsfaktorer og norsk standard kontoplan.">
+  <title>Klimaintensiteter Norge · Sea Breeze Consulting</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Klimaintensiteter Norge">
+      <span class="brand-mark" aria-hidden="true">SB</span>
+      <span><strong>Sea Breeze Consulting</strong><small>Klimaintensiteter Norge</small></span>
+    </a>
+    <a class="header-link" href="methodology/">Metode og kilder</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Åpent referansesett · 2026 interim</div>
+      <h1>Finn riktig klimaintensitet</h1>
+      <p>Søk på kontonummer, kontonavn eller kategori. Datasettet kobler DFØs utslippsfaktorer til standard kontoplan for statlige virksomheter.</p>
+      <div class="release-note">
+        <strong>Om 2026-versjonen</strong>
+        <span>Innkjøpsfaktorene har 2022 som datagrunnlag, ble revidert av DFØ i 2025 og er prisjustert til august 2026. Aktivitetsbaserte faktorer er ikke KPI-justert.</span>
+      </div>
+    </section>
+
+    <section class="browser" aria-labelledby="browser-heading">
+      <div class="browser-heading">
+        <div><span class="section-label">Faktoroversikt</span><h2 id="browser-heading">Utforsk datasettet</h2></div>
+        <a class="download" href="data/public/dfo/2026/factors.csv" download>Last ned CSV <span aria-hidden="true">↓</span></a>
+      </div>
+
+      <div class="stats" aria-label="Nøkkeltall">
+        <div><strong id="total-count">–</strong><span>faktorer totalt</span></div>
+        <div><strong id="spend-count">–</strong><span>innkjøpsbaserte</span></div>
+        <div><strong id="activity-count">–</strong><span>aktivitetsbaserte</span></div>
+      </div>
+
+      <div class="controls">
+        <label class="search"><span class="sr-only">Søk i faktorene</span><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Søk på konto, navn, kategori eller kilde…" autocomplete="off"></label>
+        <div class="filter-group" role="group" aria-label="Velg faktortype">
+          <button class="filter active" data-type="all" type="button">Alle</button>
+          <button class="filter" data-type="spend" type="button">Innkjøp</button>
+          <button class="filter" data-type="activity" type="button">Aktivitet</button>
+        </div>
+      </div>
+
+      <p id="result-summary" class="result-summary" aria-live="polite">Laster faktorer…</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Konto</th><th>Kontonavn</th><th>Klimaintensitet</th><th>Type</th><th><span class="sr-only">Detaljer</span></th></tr></thead>
+          <tbody id="factor-rows"></tbody>
+        </table>
+        <div id="empty-state" class="empty" hidden>Ingen faktorer samsvarer med søket.</div>
+      </div>
+    </section>
+
+    <section class="guidance">
+      <div><span class="section-label">Riktig bruk</span><h2>Aktivitetsdata først</h2></div>
+      <p>Bruk en spesifikk aktivitetsbasert faktor når fysisk forbruk er kjent, for eksempel kWh strøm eller liter drivstoff. Bruk innkjøpsbaserte faktorer til overordnet kartlegging når bare kostnaden er kjent.</p>
+    </section>
+  </main>
+
+  <dialog id="details">
+    <button id="close-dialog" class="close" type="button" aria-label="Lukk">×</button>
+    <div id="detail-content"></div>
+  </dialog>
+
+  <footer><span>© <span id="year"></span> Sea Breeze Electrical Consulting AS</span><span>Åpne data · dokumentert metode · versjonerte utgivelser</span></footer>
+</body>
+</html>
